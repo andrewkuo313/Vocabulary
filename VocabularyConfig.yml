@@ -1,0 +1,51 @@
+﻿Config:
+  #true的話，在對話框輸入英文單字的時候會取消發送到對話頻道上，false則相反
+  CancelledChat: true
+  #當輸入了英文單字時，隔幾刻(tick)才會跑出新的題目
+  DelayTime: 60
+  
+  #####################################################
+  # TopicText指的是題目出現時出現的文字               #
+  # CorrectText指的是答對題目時出現的文字             #
+  # IncorrectText指的是答錯題目時出現的文字           #
+  #                                                   #
+  # 你可以使用一些文字來讓插件代入題目相關的資訊:     #
+  #   %english% 將會顯示題目，用在TopicText會呈現空格 #
+  #   %level% 將會顯示題目的等級                      #
+  #   %pos% 將會顯示題目的詞性                        #
+  #   %chinese% 將會顯示題目的中文翻譯                #
+  #   %wordcount% 將會顯示題目的字數                  #
+  #####################################################
+  
+  #Title的設定
+  Title:
+    #true的話，文字將會出現在Title，false則相反
+    Use: true
+    TopicText: '&f%english%'
+    CorrectText: '&a%english%'
+    IncorrectText: '&c%english%'
+  #Subtitle的設定
+  Subtitle:
+    #true的話，文字將會出現在Subtitle，false則相反
+    Use: true
+    TopicText: '&d%level%級 &b%pos%&f.&e%wordcount% &6%chinese%'
+    CorrectText: '&d%level%級 &b%pos%&f.&e%wordcount% &6%chinese%'
+    IncorrectText: '&d%level%級 &b%pos%&f.&e%wordcount% &6%chinese%'
+  #Actionbar的設定
+  Actionbar:
+    #true的話，文字將會出現在Actionbar，false則相反
+    Use: false
+    TopicText: '&f%english% &d%level%級 &b%pos%&f.&e%wordcount% &6%chinese%'
+    CorrectText: '&a%english% &d%level%級 &b%pos%&f.&e%wordcount% &6%chinese%'
+    IncorrectText: '&c%english% &d%level%級 &b%pos%&f.&e%wordcount% &6%chinese%'
+  #對話框的設定
+  Dialog:
+    #true的話，文字將會出現在對話框，false則相反
+    Use: true
+    TopicText: '&f%english% &d%level%級 &b%pos%&f.&e%wordcount% &6%chinese%'
+    CorrectText: '&a%english% &d%level%級 &b%pos%&f.&e%wordcount% &6%chinese%'
+    IncorrectText: '&c%english% &d%level%級 &b%pos%&f.&e%wordcount% &6%chinese%'
+Database:
+  ConnectionInfo: 'jdbc:mysql://localhost:3306/databasename'
+  UserName: root
+  Password: admin

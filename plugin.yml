@@ -1,0 +1,8 @@
+name: Vocabulary
+main: com.gmail.andrewchouhs.Main
+version: 1.0.0
+author: andrewkuo313
+commands:
+  voc:
+    description: '§cVocabulary 總指令。'
+    aliases: [vo, voca, vocabulary]
