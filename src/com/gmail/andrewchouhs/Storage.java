@@ -33,6 +33,8 @@ public class Storage
 		
 		fullName = "Vocabulary v" + main.getDescription().getVersion();
 
+		loadAllConfig(Bukkit.getConsoleSender());
+		
 		INMSObject nmsObjectReference;
 		String version = Bukkit.getServer().getClass().getPackage().getName().replace(".",  ",").split(",")[3].replace("v", "");
 		try

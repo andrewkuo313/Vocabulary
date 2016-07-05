@@ -1,6 +1,5 @@
 package com.gmail.andrewchouhs;
 
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.gmail.andrewchouhs.event.ChatEvent;
 import com.gmail.andrewchouhs.event.Commands;
@@ -16,7 +15,6 @@ public class Main extends JavaPlugin
 		getServer().getPluginManager().registerEvents(new ChatEvent(this) , this);
 		getServer().getPluginManager().registerEvents(new QuitEvent(this), this);
 		getCommand("voc").setExecutor(new Commands(this));
-		storage.loadAllConfig(Bukkit.getConsoleSender());
 		getLogger().info(storage.fullName + " 開啟！");
 	}
 	
