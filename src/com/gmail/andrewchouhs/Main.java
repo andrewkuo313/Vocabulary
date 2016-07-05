@@ -2,9 +2,9 @@ package com.gmail.andrewchouhs;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-import event.ChatEvent;
-import event.Commands;
-import event.QuitEvent;
+import com.gmail.andrewchouhs.event.ChatEvent;
+import com.gmail.andrewchouhs.event.Commands;
+import com.gmail.andrewchouhs.event.QuitEvent;
 
 public class Main extends JavaPlugin
 {

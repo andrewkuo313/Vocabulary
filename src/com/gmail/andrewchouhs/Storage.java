@@ -8,8 +8,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import com.gmail.andrewchouhs.nmsobject.INMSObject;
 import net.md_5.bungee.api.ChatColor;
-import nmsobject.INMSObject;
 
 public class Storage 
 {

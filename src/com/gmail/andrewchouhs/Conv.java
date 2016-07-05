@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import nmsobject.INMSObject;
+import com.gmail.andrewchouhs.nmsobject.INMSObject;
 
 public class Conv 
 {

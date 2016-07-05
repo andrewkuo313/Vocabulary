@@ -1,4 +1,4 @@
-package nmsobject;
+package com.gmail.andrewchouhs.nmsobject;
 
 import org.bukkit.entity.Player;
 

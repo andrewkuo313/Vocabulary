@@ -1,4 +1,4 @@
-package event;
+package com.gmail.andrewchouhs.event;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
