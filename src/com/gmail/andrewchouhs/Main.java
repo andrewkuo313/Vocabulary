@@ -17,16 +17,11 @@ public class Main extends JavaPlugin
 		getServer().getPluginManager().registerEvents(new QuitEvent(this), this);
 		getCommand("voc").setExecutor(new Commands(this));
 		storage.loadAllConfig(Bukkit.getConsoleSender());
-		getLogger().info(getFullName() + " 開啟！");
+		getLogger().info(storage.fullName + " 開啟！");
 	}
 	
 	public void onDisable()
 	{
-		getLogger().info(getFullName() + " 關閉！");
-	}
-
-	public String getFullName()
-	{
-		return "Vocabulary v" + getDescription().getVersion();
+		getLogger().info(storage.fullName + " 關閉！");
 	}
 }

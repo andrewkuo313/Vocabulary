@@ -18,7 +18,7 @@ public class Conv
 	{
 		this.main = main;
 	}
-	
+	//after make DAO split from this , do txt
 	private void printMessage(Player player , AnswerStatus as , String englishWord , String chineseWord , String partOfSpeech , String alphabetNumber , String table)
 	{
 		Storage storage = main.storage;

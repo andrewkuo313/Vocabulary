@@ -25,23 +25,26 @@ public class Storage
 	public final HashMap<Player , PlayerInfo> playing = new HashMap<Player , PlayerInfo>();
 	private Main main;
 	public final INMSObject nmsObject;
+	public final String fullName;
 	
 	public Storage(Main main)
 	{
 		this.main = main;
 		
+		fullName = "Vocabulary v" + main.getDescription().getVersion();
+
 		INMSObject nmsObjectReference;
 		String version = Bukkit.getServer().getClass().getPackage().getName().replace(".",  ",").split(",")[3].replace("v", "");
 		try
 		{
-			Bukkit.getConsoleSender().sendMessage("§a" + main.getFullName() + " : 此伺服器版本可使用Title與Actionbar功能！");
-			nmsObjectReference = (INMSObject)(Class.forName("nmsobject.NMSObjectImpl_" + version).newInstance());
+			nmsObjectReference = (INMSObject)(Class.forName("com.gmail.andrewchouhs.nmsobject.NMSObjectImpl_" + version).newInstance());
+			Bukkit.getConsoleSender().sendMessage("§a" + fullName + " : 此伺服器版本可使用Title與Actionbar功能！");
 		}
 		catch(Exception e)
 		{
 			nmsObjectReference = null;
 			e.printStackTrace();
-			Bukkit.getConsoleSender().sendMessage("§c" + main.getFullName() + " : 此伺服器版本不可使用Title與Actionbar功能！");
+			Bukkit.getConsoleSender().sendMessage("§c" + fullName + " : 此伺服器版本不可使用Title與Actionbar功能！");
 		}
 		nmsObject = nmsObjectReference;
 	}
@@ -59,7 +62,7 @@ public class Storage
 		dialogConfig = textConfigFromYaml(vY , "Dialog");
 		titleConfig = textConfigFromYaml(vY , "Title");
 		subtitleConfig = textConfigFromYaml(vY , "Subtitle");
-		sender.sendMessage("§a" + main.getFullName() + " 讀取設定檔成功！");
+		sender.sendMessage("§a" + fullName + " 讀取設定檔成功！");
 	}
 
 	private TextConfig textConfigFromYaml(YamlConfiguration yaml , String node)
