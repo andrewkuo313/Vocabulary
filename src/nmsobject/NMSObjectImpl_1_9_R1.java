@@ -1,4 +1,4 @@
-package fornms;
+package nmsobject;
 
 import org.bukkit.craftbukkit.v1_9_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
@@ -9,7 +9,7 @@ import net.minecraft.server.v1_9_R1.PacketPlayOutTitle;
 import net.minecraft.server.v1_9_R1.PacketPlayOutTitle.EnumTitleAction;
 import net.minecraft.server.v1_9_R1.PlayerConnection;
 
-public class ForNMS_1_9_R1 implements ForNMSImpl
+public class NMSObjectImpl_1_9_R1 implements INMSObject
 {
 	public final void sendTitle(Player player , String text , int inTick , int midTick , int outTick)
 	{

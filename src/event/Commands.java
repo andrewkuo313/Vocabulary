@@ -1,23 +1,36 @@
-package com.gmail.andrewchouhs;
+package event;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import com.gmail.andrewchouhs.Conv;
+import com.gmail.andrewchouhs.Main;
+import com.gmail.andrewchouhs.PlayerInfo;
+import com.gmail.andrewchouhs.Storage;
 
 public class Commands implements CommandExecutor
 {
+	private Main main;
+	
+	public Commands(Main main)
+	{
+		this.main = main;
+	}
+	
 	@Override
-	public final boolean onCommand(CommandSender sender, Command command, String label, String[] args)
+	public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
 	{
 		if(args.length >= 1)
 		{
+			Storage storage = main.storage;
+			Conv conv = main.conv;
 			switch(args[0])
 			{
 				case "r":
 				case "reload":
 					if(sender.hasPermission("vocabulary.reload"))
-						Main.getMain().loadAllConfig(sender);
+						storage.loadAllConfig(sender);
 					else
 						sender.sendMessage("§c您沒有權限！");
 					return false;
@@ -28,12 +41,10 @@ public class Commands implements CommandExecutor
 						Player player = (Player) sender;
 						if(player.hasPermission("vocabulary.play"))
 						{
-							if(Storage.isPlaying(player))
+							if(storage.playing.containsKey(player))
 							{
-								Storage.removePlaying(player);
+								storage.playing.remove(player);
 								player.sendMessage("§6挑戰已關閉！");
-								Conv.getTitleObject().sendTitle(player, "", 0, 0, 0);
-								Conv.getTitleObject().sendSubtitle(player, "", 0, 0, 0);
 								return false;
 							}
 							else
@@ -64,12 +75,12 @@ public class Commands implements CommandExecutor
 								else
 								{
 									PlayerInfo playerInfo = new PlayerInfo();
-									playerInfo.setSmallRange(smallRange);
-									playerInfo.setBigRange(bigRange);
-									playerInfo.setPlayer(player);
-									playerInfo.setLocked(false);
-									Storage.addPlaying(player, playerInfo);
-									Conv.generateWord(playerInfo);
+									playerInfo.smallRange = smallRange;
+									playerInfo.bigRange = bigRange;
+									playerInfo.player = player;
+									playerInfo.locked = false;
+									storage.playing.put(player, playerInfo);
+									conv.generateWord(playerInfo);
 									return false;
 								}
 							}
@@ -94,5 +105,4 @@ public class Commands implements CommandExecutor
 				);
 		return false;
 	}
-
 }

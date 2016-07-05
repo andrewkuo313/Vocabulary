@@ -15,17 +15,17 @@ public class TextConfig
 		this.incorrectText = incorrectText;
 	}
 
-	public final boolean isUsed() 
+	public boolean isUsed() 
 	{
 		return used;
 	}
 
-	public final void setUsed(boolean used) 
+	public void setUsed(boolean used) 
 	{
 		this.used = used;
 	}
 
-	public final String getText(AnswerStatus as)
+	public String getText(AnswerStatus as)
 	{
 		switch(as)
 		{
@@ -38,20 +38,5 @@ public class TextConfig
 			default:
 				return null;
 		}
-	}
-
-	public final void setTopicText(String topicText) 
-	{
-		this.topicText = topicText;
-	}
-
-	public final void setCorrectText(String correctText)
-	{
-		this.correctText = correctText;
-	}
-
-	public final void setIncorrectText(String incorrectText) 
-	{
-		this.incorrectText = incorrectText;
 	}
 }

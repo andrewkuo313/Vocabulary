@@ -1,15 +1,15 @@
-package fornms;
+package nmsobject;
 
-import org.bukkit.craftbukkit.v1_8_R1.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_9_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
-import net.minecraft.server.v1_8_R1.ChatSerializer;
-import net.minecraft.server.v1_8_R1.EnumTitleAction;
-import net.minecraft.server.v1_8_R1.PacketPlayOutChat;
-import net.minecraft.server.v1_8_R1.PacketPlayOutTitle;
-import net.minecraft.server.v1_8_R1.PlayerConnection;
+import net.minecraft.server.v1_9_R2.IChatBaseComponent.ChatSerializer;
+import net.minecraft.server.v1_9_R2.PacketPlayOutChat;
+import net.minecraft.server.v1_9_R2.PacketPlayOutTitle;
+import net.minecraft.server.v1_9_R2.PacketPlayOutTitle.EnumTitleAction;
+import net.minecraft.server.v1_9_R2.PlayerConnection;
 
-public class ForNMS_1_8_R1 implements ForNMSImpl
+public class NMSObjectImpl_1_9_R2 implements INMSObject
 {
 	public final void sendTitle(Player player , String text , int inTick , int midTick , int outTick)
 	{

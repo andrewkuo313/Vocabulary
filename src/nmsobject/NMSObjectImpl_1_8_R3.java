@@ -1,4 +1,4 @@
-package fornms;
+package nmsobject;
 
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
@@ -9,7 +9,7 @@ import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
 import net.minecraft.server.v1_8_R3.PacketPlayOutChat;
 import net.minecraft.server.v1_8_R3.PacketPlayOutTitle.EnumTitleAction;
 
-public class ForNMS_1_8_R3 implements ForNMSImpl
+public class NMSObjectImpl_1_8_R3 implements INMSObject
 {
 	public final void sendTitle(Player player , String text , int inTick , int midTick , int outTick)
 	{

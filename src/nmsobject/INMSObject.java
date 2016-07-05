@@ -1,8 +1,8 @@
-package fornms;
+package nmsobject;
 
 import org.bukkit.entity.Player;
 
-public interface ForNMSImpl 
+public interface INMSObject 
 {
 	public void sendTitle(Player player, String text , int inTick , int midTick , int outTick);
 	public void sendSubtitle(Player player , String text , int inTick , int midTick , int outTick);
